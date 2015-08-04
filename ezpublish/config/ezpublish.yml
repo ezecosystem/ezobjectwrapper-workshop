@@ -1,0 +1,49 @@
+doctrine:
+    dbal:
+        connections:
+            eng_repository_connection:
+                driver: pdo_mysql
+                host: localhost
+                user: summer
+                password: camp
+                dbname: ezobjwrapper
+                charset: UTF8
+ezpublish:
+    imagemagick:
+        enabled: true
+        path: /usr/bin/convert
+    repositories:
+        eng_repository:
+            engine: legacy
+            connection: eng_repository_connection
+    siteaccess:
+        default_siteaccess: eng
+        list:
+            - eng
+            - site_admin
+        groups:
+            ezdemo_site_group:
+                - eng
+                - site_admin
+        match:
+            Map\Host:
+                admin.ezobjwrapper.ezsc: site_admin
+                ezobjwrapper.ezsc: eng
+    system:
+        ezdemo_site_group:
+            repository: eng_repository
+            languages:
+                - eng-GB
+            var_dir: var/ezdemo_site
+        eng:
+            session:
+                name: eZSESSID
+        site_admin:
+            legacy_mode: true
+stash:
+    caches:
+        default:
+            drivers:
+                - FileSystem
+            inMemory: true
+            registerDoctrineAdapter: false
