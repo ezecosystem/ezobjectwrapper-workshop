@@ -3,10 +3,10 @@ doctrine:
         connections:
             eng_repository_connection:
                 driver: pdo_mysql
-                host: localhost
-                user: summer
-                password: camp
-                dbname: ezobjwrapper
+                host: %database_host%
+                user: %database_user%
+                password: %database_password%
+                dbname: %database_name%
                 charset: UTF8
 ezpublish:
     imagemagick:
