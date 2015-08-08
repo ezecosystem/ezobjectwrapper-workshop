@@ -9,6 +9,9 @@
             "homepage": "https://github.com/ezsystems/ezpublish-community/contributors"
         }
     ],
+  "repositories": [
+    { "type": "vcs", "url": "https://github.com/kaliop/ezobjectwrapper.git" }
+   ],
     "autoload": {
         "psr-0": { "": "src/" }
     },
@@ -35,7 +38,8 @@
         "doctrine/dbal": "~2.5@rc",
         "doctrine/doctrine-bundle": "~1.3@beta",
         "symfony/expression-language": "~2.4",
-        "sensio/framework-extra-bundle": "~3.0"
+        "sensio/framework-extra-bundle": "~3.0",
+        "ezobject/wrapperbundle": "^1.0"
     },
     "require-dev": {
         "behat/behat": "3.0.*",
