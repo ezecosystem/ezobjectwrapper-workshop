@@ -1,0 +1,25 @@
+{% extends "KaliopEzobjectWorkshopBundle::pagelayout.html.twig" %}
+
+{% block content %}
+	<div class="container">
+		<div class="bs-docs-section">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="page-header">
+
+						<h1 id="type">{{ ez_render_field(content,'name') }}</h1>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-4">
+					<div class="bs-component">
+						{{ ez_render_field(content,'short_description') }}
+					</div>
+				</div>
+			</div>
+
+	</div>
+{% endblock %}

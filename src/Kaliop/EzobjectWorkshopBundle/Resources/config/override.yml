@@ -9,3 +9,13 @@ ezpublish:
                         controller: KaliopEzobjectWorkshopBundle:Home:index
                         match:
                             Identifier\ContentType: "landing_page"
+                    folder:
+                        template: KaliopEzobjectWorkshopBundle:Folder:full.html.twig
+                        controller: KaliopEzobjectWorkshopBundle:Folder:index
+                        match:
+                            Identifier\ContentType: "folder"
+                    article:
+                        template: KaliopEzobjectWorkshopBundle:Article:full.html.twig
+                        controller: KaliopEzobjectWorkshopBundle:Article:index
+                        match:
+                            Identifier\ContentType: "article"

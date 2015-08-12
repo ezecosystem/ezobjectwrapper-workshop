@@ -1,5 +1,7 @@
 imports:
     - { resource: '@KaliopEzobjectWorkshopBundle/Resources/config/override.yml' }
+    - { resource: '@KaliopEzobjectWorkshopBundle/Resources/config/eZObjectWrapper.yml' }
+
 doctrine:
     dbal:
         connections:
@@ -42,6 +44,10 @@ ezpublish:
                 name: eZSESSID
         site_admin:
             legacy_mode: true
+            session:
+                name: eZSESSID_admin
+                cookie_httponly: true
+                cookie_lifetime: 86400
 stash:
     caches:
         default:

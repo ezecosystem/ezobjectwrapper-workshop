@@ -19,13 +19,15 @@
         php_value magic_quotes_gpc  0
         php_value magic_quotes_runtime  0
         php_value allow_call_time_pass_reference 0
-	php_value max_execution_time 180
+	    php_value max_execution_time 180
+	    php_value session.gc_maxlifetime 86400
     </IfModule>
 
     # Environment.
     # Possible values: "prod" and "dev" out-of-the-box, other values possible with proper configuration
     # Defaults to "prod" if omitted (uses SetEnvIf so value can be used in rewrite rules)
     SetEnvIf Request_URI ".*" ENVIRONMENT=dev
+    SetEnv USE_HTTP_CACHE 0
 
     <IfModule mod_rewrite.c>
         RewriteEngine On
