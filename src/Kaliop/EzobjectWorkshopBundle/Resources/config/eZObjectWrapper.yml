@@ -1,0 +1,5 @@
+parameters:
+    default_ezobject_class: \Kaliop\EzobjectWorkshopBundle\eZObjectWrapper\BaseWrapper
+    class_mapping:
+         article: \Kaliop\EzobjectWorkshopBundle\eZObjectWrapper\ArticleWrapper
+         event: \Kaliop\EzobjectWorkshopBundle\eZObjectWrapper\EventWrapper

@@ -18,17 +18,8 @@
                 <div class="bs-component">
                     <h2>Children</h2>
 	                <ul class="list-group">
-                    {% for childInfo in  children %}
-	                    {% if  childInfo.identifier == 'event' or childInfo.identifier == 'article' or childInfo.identifier == 'call_to_action' %}
-
-	                    <li class="list-group-item">{{ ez_render_field(childInfo.content,'title') }}</li>
-
-	                    {% else %}
-
-	                    <li class="list-group-item">{{ ez_render_field(childInfo.content,'name') }}</li>
-
-	                    {% endif %}
-
+                    {% for child in  children %}
+	                    <li class="list-group-item">{{ ez_render_field(child.content,child.titleField) }}</li>
                     {% endfor %}
 	                </ul>
                 </div>

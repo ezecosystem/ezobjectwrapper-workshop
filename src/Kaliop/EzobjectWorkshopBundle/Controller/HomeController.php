@@ -21,9 +21,7 @@ class HomeController extends Controller
         $children = array();
         foreach($childrenLocationList->locations as $childLocation)
         {
-            $content = $repository->getContentService()->loadContent($childLocation->contentId);
-            $contentType = $repository->getContentTypeService()->loadContentType($content->contentInfo->contentTypeId);
-            $children[]=array('identifier' => $contentType->identifier, 'content' => $content, 'location' => $childLocation);
+            $children[]=$this->get('ezobject_wrapper.services.factory')->buildeZObjectWrapper($childLocation->id);
         }
 
         $params['children']=$children;
