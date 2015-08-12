@@ -1,0 +1,11 @@
+ezpublish:
+    system:
+        eng:
+            content_view:
+            location_view:
+                full:
+                    home:
+                        template: KaliopEzobjectWorkshopBundle:Home:full.html.twig
+                        controller: KaliopEzobjectWorkshopBundle:Home:index
+                        match:
+                            Identifier\ContentType: "landing_page"

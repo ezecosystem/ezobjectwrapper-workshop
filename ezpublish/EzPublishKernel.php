@@ -67,7 +67,7 @@ class EzPublishKernel extends Kernel
             new EzPublishCoreBundle(),
             new EzPublishLegacyBundle( $this ),
             new EzPublishIOBundle(),
-            new EzSystemsDemoBundle(),
+            //new EzSystemsDemoBundle(),
             new EzPublishRestBundle(),
             new EzSystemsCommentsBundle(),
             new EzSystemsNgsymfonytoolsBundle(),
@@ -76,7 +76,8 @@ class EzPublishKernel extends Kernel
             new NelmioCorsBundle(),
             new KnpMenuBundle(),
             new OneupFlysystemBundle(),
-            new \eZObject\WrapperBundle\eZObjectWrapperBundle()
+            new \eZObject\WrapperBundle\eZObjectWrapperBundle(),
+            new Kaliop\EzobjectWorkshopBundle\KaliopEzobjectWorkshopBundle(),
         );
 
         switch ( $this->getEnvironment() )

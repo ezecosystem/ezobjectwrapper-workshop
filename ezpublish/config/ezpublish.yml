@@ -1,3 +1,5 @@
+imports:
+    - { resource: '@KaliopEzobjectWorkshopBundle/Resources/config/override.yml' }
 doctrine:
     dbal:
         connections:
