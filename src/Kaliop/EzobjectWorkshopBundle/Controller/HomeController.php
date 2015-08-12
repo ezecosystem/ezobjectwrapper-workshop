@@ -19,11 +19,11 @@ class HomeController extends Controller
         $childrenLocationList = $repository->getLocationService()->loadLocationChildren($location);
 
         $children = array();
-        foreach($childrenLocationList->locations as $location)
+        foreach($childrenLocationList->locations as $childLocation)
         {
-            $content = $repository->getContentService()->loadContent($location->contentId);
+            $content = $repository->getContentService()->loadContent($childLocation->contentId);
             $contentType = $repository->getContentTypeService()->loadContentType($content->contentInfo->contentTypeId);
-            $children[]=array('identifier' => $contentType->identifier, 'content' => $content, 'location' => $location);
+            $children[]=array('identifier' => $contentType->identifier, 'content' => $content, 'location' => $childLocation);
         }
 
         $params['children']=$children;
