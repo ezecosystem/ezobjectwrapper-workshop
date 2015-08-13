@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: steven
- * Date: 12/08/15
- * Time: 18:25
- */
 
 namespace Kaliop\EzobjectWorkshopBundle\eZObjectWrapper;
 
@@ -15,4 +9,38 @@ class ArticleWrapper extends BaseWrapper {
     {
         return 'title';
     }
+
+    public function getColorClass()
+    {
+        $colorValue = $this->content()->getFieldValue('color');
+        $colorClass="text-primary";
+
+        if(!empty($colorValue))
+        {
+            switch($colorValue->selection[0])
+            {
+                case "0":
+                    $colorClass="text-primary";
+                    break;
+
+                case "1":
+                    $colorClass="text-warning";
+                    break;
+
+                case "2":
+                    $colorClass="text-danger";
+                    break;
+                case "3":
+                    $colorClass="text-success";
+                    break;
+                case "4":
+                    $colorClass="text-info";
+                    break;
+
+            }
+        }
+        return $colorClass;
+    }
+
+
 }

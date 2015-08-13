@@ -8,10 +8,8 @@ class ArticleController extends Controller
 {
     public function indexAction($locationId, $viewType, $layout = false, array $params = array())
     {
-        /**
-         * @var Repository $repository
-         */
-        $repository = $this->get('ezpublish.api.repository');
+
+        $params['wrapper'] = $this->get('ezobject_wrapper.services.factory')->buildeZObjectWrapper($locationId);
 
         $response =  $this->get( 'ezpublish.controller.content.view' )->viewLocation(
             $locationId,
