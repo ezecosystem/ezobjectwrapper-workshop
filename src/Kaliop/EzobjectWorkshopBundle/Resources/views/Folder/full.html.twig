@@ -21,5 +21,25 @@
 				</div>
 			</div>
 
+			<div class="row">
+
+				<div class="col-lg-4">
+					<div class="bs-component">
+						<h2>Children</h2>
+						<ul class="list-group">
+							{% for child in  children %}
+								<li class="list-group-item">
+									<a href={{child.getUrl}} {% if child.openLinkInNewWindow %}target="_blank"{% endif %}>
+										{{ ez_render_field(child.content,child.titleField) }}
+									</a>
+								</li>
+							{% endfor %}
+						</ul>
+					</div>
+
+				</div>
+
+			</div>
+
 	</div>
 {% endblock %}

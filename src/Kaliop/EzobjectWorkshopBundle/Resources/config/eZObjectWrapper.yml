@@ -3,3 +3,4 @@ parameters:
     class_mapping:
          article: \Kaliop\EzobjectWorkshopBundle\eZObjectWrapper\ArticleWrapper
          event: \Kaliop\EzobjectWorkshopBundle\eZObjectWrapper\EventWrapper
+         link: \Kaliop\EzobjectWorkshopBundle\eZObjectWrapper\LinkWrapper

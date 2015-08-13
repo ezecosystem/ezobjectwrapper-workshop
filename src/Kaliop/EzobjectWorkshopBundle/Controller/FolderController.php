@@ -13,6 +13,18 @@ class FolderController extends Controller
          */
         $repository = $this->get('ezpublish.api.repository');
 
+
+        $location = $repository->getLocationService()->loadLocation($locationId);
+        $childrenLocationList = $repository->getLocationService()->loadLocationChildren($location);
+
+        $children = array();
+        foreach($childrenLocationList->locations as $childLocation)
+        {
+            $children[]=$this->get('ezobject_wrapper.services.factory')->buildeZObjectWrapper($childLocation->id);
+        }
+
+        $params['children']=$children;
+
         $response =  $this->get( 'ezpublish.controller.content.view' )->viewLocation(
             $locationId,
             $viewType,

@@ -11,4 +11,14 @@ class BaseWrapper extends eZObjectWrapper{
         return 'name';
     }
 
+    public function getUrl()
+    {
+        return $this->container->get( 'ezpublish.urlalias_router' )->generate( $this->location() );
+    }
+
+    public function openLinkInNewWindow()
+    {
+        return false;
+    }
+
 }
