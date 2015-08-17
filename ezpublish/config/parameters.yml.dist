@@ -14,4 +14,3 @@ parameters:
     database_name: ezobjwrapper
     database_user: summer
     database_password: camp
-

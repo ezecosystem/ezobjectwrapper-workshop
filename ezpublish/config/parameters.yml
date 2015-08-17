@@ -1,4 +1,4 @@
-# This file is auto-generated during the composer install
+# This file is a "template" of what your parameters.yml file should look like
 parameters:
     secret: 82980092f69f40f2f3cc63d143f38fff93f2c1ff
     locale_fallback: en
@@ -9,6 +9,7 @@ parameters:
     debug_toolbar: true
     debug_redirects: false
     use_assetic_controller: true
+
     database_host: localhost
     database_name: ezobjwrapper
     database_user: summer
