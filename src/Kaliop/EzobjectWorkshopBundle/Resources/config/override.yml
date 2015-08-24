@@ -19,3 +19,14 @@ ezpublish:
                         controller: KaliopEzobjectWorkshopBundle:Article:index
                         match:
                             Identifier\ContentType: "article"
+                    place_list:
+                        template: KaliopEzobjectWorkshopBundle:Place_list:full.html.twig
+                        controller: KaliopEzobjectWorkshopBundle:Place:full
+                        match:
+                            Identifier\ContentType: "place_list"
+
+                line:
+                    place_list:
+                        template: KaliopEzobjectWorkshopBundle:Place:line.html.twig
+                        match:
+                            Identifier\ContentType: "place"
